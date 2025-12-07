@@ -39,10 +39,10 @@ class MltoXml:
                 res_string = text
             case "yaml":
                 data = yaml.load(text, Loader=yaml.SafeLoader)
-                res_string = xmltodict.unparse(data)
+                res_string = xmltodict.unparse(data, full_document=False, pretty=True)
             case "toml":
                 data = toml.loads(text)
-                res_string = xmltodict.unparse(data)
+                res_string = xmltodict.unparse(data, full_document=False, pretty=True)
 
         return (res_string,)
 
